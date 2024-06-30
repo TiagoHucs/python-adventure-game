@@ -23,28 +23,14 @@ heroi = Hero()
 # Loop principal
 running = True
 while running:
+    
     # Eventos
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_w:
-                heroi.speed_y = -0.2
-            elif event.key == pygame.K_s:
-                heroi.speed_y = 0.2
-            elif event.key == pygame.K_a:
-                heroi.speed_x = -0.2
-            elif event.key == pygame.K_d:
-                heroi.speed_x = 0.2
-        elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_w:
-                heroi.speed_y = 0
-            elif event.key == pygame.K_s:
-                heroi.speed_y = 0
-            elif event.key == pygame.K_a:
-                heroi.speed_x = 0
-            elif event.key == pygame.K_d:
-                heroi.speed_x = 0
+        else:
+            heroi.trate_event(event)
+
     
     # Limpar a tela
     screen.fill(black)
