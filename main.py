@@ -8,7 +8,7 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 TITLE = 'Playground RPG 2'
 FONT_TYPE = 'freesansbold.ttf'
-FONT_SIZE = 20
+FONT_SIZE = 15
 WHITE = (255, 255, 255)
 
 # Inicialização do Pygame
