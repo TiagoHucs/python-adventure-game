@@ -3,15 +3,22 @@ import sys
 from coin import Coin
 from hero import Hero
 
+# Constantes
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+TITLE = 'Playground RPG 2'
+FONT_TYPE = 'freesansbold.ttf'
+FONT_SIZE = 20
+WHITE = (255, 255, 255)
+
 # Inicialização do Pygame
 pygame.init()
 
-# Definindo as dimensões da tela
-screen_width = 800
-screen_height = 600
-screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption('Playground RPG')
-font = pygame.font.Font('freesansbold.ttf',20)
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption(TITLE)
+font = pygame.font.Font(FONT_TYPE,FONT_SIZE)
+
+
 points = 0
 
 # Cores
@@ -49,7 +56,7 @@ while running:
             points += 1
 
 
-    text = font.render("Moedas: " + str(points), True, (255, 255, 255))
+    text = font.render("Moedas: " + str(points), True, WHITE)
     screen.blit(text, (10,10))
 
     # Atualizar a tela
