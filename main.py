@@ -10,6 +10,8 @@ TITLE = 'Playground RPG 2'
 FONT_TYPE = 'freesansbold.ttf'
 FONT_SIZE = 15
 WHITE = (255, 255, 255)
+BLACK = (0 , 0 , 0)
+RED = (255,0,0)
 
 # Inicialização do Pygame
 pygame.init()
@@ -20,10 +22,6 @@ font = pygame.font.Font(FONT_TYPE,FONT_SIZE)
 
 
 points = 0
-
-# Cores
-white = (255, 255, 255)
-black = (0, 0, 0)
 
 moedas = [Coin(),Coin(),Coin(),Coin(),Coin()]
 moedas.append(Coin())
@@ -41,7 +39,7 @@ while running:
             heroi.trate_event(event)
 
     # Limpar a tela
-    screen.fill(black)
+    screen.fill(BLACK)
 
     # Atualiza e desenha heroi
     heroi.update()
@@ -51,7 +49,7 @@ while running:
     for moeda in moedas:
         moeda.draw(screen)
         if moeda.rect.colliderect(heroi.rect):
-            pygame.draw.rect(screen, (255,0,0), heroi.rect, 2)
+            pygame.draw.rect(screen, RED, heroi.rect, 2)
             moedas.remove(moeda)
             points += 1
 
