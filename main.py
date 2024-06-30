@@ -1,6 +1,5 @@
 import pygame
 import sys
-import random
 from coin import Coin
 from hero import Hero
 
@@ -17,13 +16,14 @@ pygame.display.set_caption('Playground RPG')
 white = (255, 255, 255)
 black = (0, 0, 0)
 
-moedas = [Coin(),Coin(),Coin(),Coin(),Coin(),Coin()]
+moedas = [Coin(),Coin(),Coin(),Coin(),Coin()]
+moedas.append(Coin())
 heroi = Hero()
 
 # Loop principal
 running = True
 while running:
-    
+
     # Eventos
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -31,7 +31,6 @@ while running:
         else:
             heroi.trate_event(event)
 
-    
     # Limpar a tela
     screen.fill(black)
 
@@ -42,6 +41,8 @@ while running:
     # Desenhar moedas
     for moeda in moedas:
         moeda.draw(screen)
+        if moeda.rect.colliderect(heroi.rect):
+            pygame.draw.rect(screen, (255,0,0), heroi.rect, 2)
 
     # Atualizar a tela
     pygame.display.flip()

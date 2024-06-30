@@ -12,6 +12,7 @@ class Hero():
     def __init__(self):
         self.step_index = 0
         self.image = RUNNING[0]
+        self.rect = self.image.get_rect()
         self.color = (255, 255, 255)
         self.speed_x = 0
         self.speed_y = 0

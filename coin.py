@@ -8,8 +8,7 @@ class Coin():
     def __init__(self):
         self.color = (255, 50, 50)
         self.image = IMGS[0]
-        self.width = 50
-        self.height = 50
+        self.rect = self.image.get_rect()
         self.x = random.randint(1,800)
         self.y = random.randint(1,600)
 
