@@ -11,6 +11,8 @@ screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Playground RPG')
+font = pygame.font.Font('freesansbold.ttf',20)
+points = 0
 
 # Cores
 white = (255, 255, 255)
@@ -43,6 +45,12 @@ while running:
         moeda.draw(screen)
         if moeda.rect.colliderect(heroi.rect):
             pygame.draw.rect(screen, (255,0,0), heroi.rect, 2)
+            moedas.remove(moeda)
+            points += 1
+
+
+    text = font.render("Moedas: " + str(points), True, (255, 255, 255))
+    screen.blit(text, (10,10))
 
     # Atualizar a tela
     pygame.display.flip()

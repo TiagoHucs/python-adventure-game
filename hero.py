@@ -49,8 +49,7 @@ class Hero():
         self.image = RUNNING[self.step_index // 120]
         if self.speed_x > 0:
             self.image = pygame.transform.flip(self.image, True, False)
-
-
+        self.rect = self.image.get_rect(topleft=(self.x, self.y))
 
     def draw(self, SCREEN):
         SCREEN.blit(self.image, (self.x, self.y))
