@@ -1,6 +1,7 @@
 import pygame
 import sys
 from object import Object 
+from functions import levelBuilder
 
 # Inicialize o pygame
 pygame.init()
@@ -20,31 +21,10 @@ FLOOR = (0, 100, 0)
 def main():
     clock = pygame.time.Clock()
 
-    objetos = []
-
-    # Nome do arquivo que será lido
-    nome_arquivo = "fase1.txt"
+    level = levelBuilder()
+    personagem = level.getHero()
+    objects = level.getObjects()
     
-    # Abre o arquivo para leitura da fase
-    with open(nome_arquivo, 'r') as arquivo:
-        # Lê todas as linhas do arquivo
-        linhas = arquivo.readlines()
-
-    # Percorre cada linha com seu índice
-    for indice_linha, linha in enumerate(linhas):
-        # Percorre cada caractere na linha com seu índice
-        for indice_caractere, caractere in enumerate(linha):
-            # Realiza uma ação com o índice da linha, o índice do caractere e o caractere
-            if caractere == '0':
-                objetos.append(Object(indice_caractere*32, indice_linha*32, 'assets/wall_0.png', solido=True))
-            elif caractere == 'H':
-                personagem = Object(indice_caractere*32, indice_linha*32, 'assets/hero_0.png', solido=False)
-                objetos.append(personagem)
-            elif caractere == 'T':
-                objetos.append(Object(indice_caractere*32, indice_linha*32, 'assets/tree_0.png', solido=True))
-            elif caractere == 'C':
-                objetos.append(Object(indice_caractere*32, indice_linha*32, 'assets/coin_0.png', solido=False))
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -68,7 +48,7 @@ def main():
 
         # Mover personagem e verificar colisão com objetos sólidos
         personagem.rect.x += movimento_x
-        for obj in objetos:
+        for obj in objects:
             if obj.solido and personagem.rect.colliderect(obj.rect):
                 if movimento_x > 0:  # Movendo para a direita
                     personagem.rect.right = obj.rect.left
@@ -76,23 +56,23 @@ def main():
                     personagem.rect.left = obj.rect.right
 
         personagem.rect.y += movimento_y
-        for obj in objetos:
+        for obj in objects:
             if obj.solido and personagem.rect.colliderect(obj.rect):
                 if movimento_y > 0:  # Movendo para baixo
                     personagem.rect.bottom = obj.rect.top
                 if movimento_y < 0:  # Movendo para cima
                     personagem.rect.top = obj.rect.bottom
 
-        for obj in objetos:
+        for obj in objects:
             if not obj.solido and personagem.rect.colliderect(obj.rect):
-                objetos.remove(obj)
+                objects.remove(obj)
 
         # Preencher a tela com branco
         screen.fill(FLOOR)
 
         # Desenhar os objetos
         personagem.draw(screen)
-        for obj in objetos:
+        for obj in objects:
             obj.draw(screen)
 
         # Atualizar a tela
