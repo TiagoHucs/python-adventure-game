@@ -6,7 +6,7 @@ pygame.init()
 
 # Configurações da tela
 screen_width = 800
-screen_height = 600
+screen_height = 576
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Projeto com Quadrados Tangíveis e Intangíveis")
 
@@ -39,12 +39,30 @@ def main():
     arvore2 = Objeto(500, 450, 'assets/tree_0.png', solido=True)
     moeda = Objeto(300, 500, 'assets/coin/coin_0.png', solido=False)
 
-    objetos = [arvore1, arvore2, moeda]
+    objetos = []
 
-    #depois isso vai virar uma fase
-    for i in range(23):
-        objetos.append(Objeto(i*32, 300, 'assets/wall_0.png', solido=True))
+    # Nome do arquivo que será lido
+    nome_arquivo = "fase1.txt"
+    
+    # Abre o arquivo para leitura da fase
+    with open(nome_arquivo, 'r') as arquivo:
+        # Lê todas as linhas do arquivo
+        linhas = arquivo.readlines()
 
+    # Percorre cada linha com seu índice
+    for indice_linha, linha in enumerate(linhas):
+        # Percorre cada caractere na linha com seu índice
+        for indice_caractere, caractere in enumerate(linha):
+            # Realiza uma ação com o índice da linha, o índice do caractere e o caractere
+            if caractere == '0':
+                objetos.append(Objeto(indice_caractere*32, indice_linha*32, 'assets/wall_0.png', solido=True))
+            elif caractere == 'H':
+                personagem = Objeto(indice_caractere*32, indice_linha*32, 'assets/hero/hero_0.png', solido=False)
+                objetos.append(personagem)
+            elif caractere == 'T':
+                objetos.append(Objeto(indice_caractere*32, indice_linha*32, 'assets/tree_0.png', solido=True))
+            elif caractere == 'C':
+                objetos.append(Objeto(indice_caractere*32, indice_linha*32, 'assets/coin/coin_0.png', solido=False))
 
     while True:
         for event in pygame.event.get():
