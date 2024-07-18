@@ -1,6 +1,7 @@
 import pygame
 import sys
-from level import levelBuilder
+from level import Level
+from object import Object 
 
 # Inicialize o pygame
 pygame.init()
@@ -15,20 +16,38 @@ pygame.display.set_icon(icon)
 
 FONT_TYPE = 'freesansbold.ttf'
 FONT_SIZE = 15
-font = pygame.font.Font(FONT_TYPE,FONT_SIZE)
+font = pygame.font.Font(FONT_TYPE, FONT_SIZE)
 
 # Definir a cor
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-GRASS = (0, 100, 0)
+GRAY = (125, 125, 125)
+
+world_map = [
+    [""         , "fase1.txt", ""],
+    ["fase3.txt", "fase2.txt", ""],
+    [""         ,""          , ""]
+]
+
+y = 0
+x = 1
+
+# Função para carregar o nível
+def load_level(y, x):
+    if 0 <= y < len(world_map) and 0 <= x < len(world_map[0]):
+        level = Level(world_map[y][x])
+        objects = level.getObjects()
+        return level, objects
+    return None, []
 
 # Função principal
 def main():
+    global y, x
     clock = pygame.time.Clock()
 
-    level = levelBuilder()
-    personagem = level.getHero()
-    objects = level.getObjects()
+    level, objects = load_level(y, x)
+    personagem = Object(100, 100, 'assets/yellow.png', solid=False)
+
     score = 0
     
     while True:
@@ -73,9 +92,28 @@ def main():
             if not obj.solid and personagem.rect.colliderect(obj.rect):
                 objects.remove(obj)
                 score += 1
+        
+        # Checar se mudou de fase
+        if personagem.rect.y > screen_height:
+            y += 1
+            personagem.rect.y = 0
+        elif personagem.rect.y < 0:
+            y -= 1
+            personagem.rect.y = screen_height
+        elif personagem.rect.x > screen_width:
+            x += 1
+            personagem.rect.x = 0
+        elif personagem.rect.x < 0:
+            x -= 1
+            personagem.rect.x = screen_width
 
-        # Preencher a tela com branco
-        screen.fill(GRASS)
+        if personagem.rect.y in [0, screen_height] or personagem.rect.x in [0, screen_width]:
+            level, objects = load_level(y, x)
+            if level is None:
+                pygame.quit()
+                sys.exit()
+
+        screen.fill(GRAY)
 
         # Desenhar os objetos
         personagem.draw(screen)
@@ -84,9 +122,9 @@ def main():
 
         # HUD
         text = font.render("Moedas: " + str(score), True, BLACK)
-        screen.blit(text, (12,12))   
+        screen.blit(text, (12, 12))   
         text = font.render("Moedas: " + str(score), True, WHITE)
-        screen.blit(text, (10,10))  
+        screen.blit(text, (10, 10))  
 
         # Atualizar a tela
         pygame.display.flip()
