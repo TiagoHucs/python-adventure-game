@@ -22,6 +22,8 @@ class Level:
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/green.png', solid=True))
                 elif caractere == 'B':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/blue.png', solid=True))
+                elif caractere == 'D':
+                    self.objects.append(Object(col_index*32, line_index*32, 'assets/dragon0.png', solid=True))
 
         print('fim da criacao:', file_name)
 
