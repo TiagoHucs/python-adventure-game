@@ -27,8 +27,10 @@ GRAY = (125, 125, 125)
 
 world_map = load_world_map('maps/world_map.txt')
 
-y = 1
-x = 1
+#y = 1
+#x = 3
+y = 4
+x = 3
 
 # Função para carregar o nível
 def load_level(y, x):
@@ -44,7 +46,7 @@ def main():
     clock = pygame.time.Clock()
 
     level, objects = load_level(y, x)
-    personagem = Object(100, 100, 'assets/yellow.png', solid=False)
+    personagem = Object(64, 64, 'assets/black.png', solid=False)
 
     score = 0
     
@@ -86,13 +88,13 @@ def main():
                 if movimento_y < 0:  # Movendo para cima
                     personagem.rect.top = obj.rect.bottom
 
-        for obj in objects:
-            if not obj.solid and personagem.rect.colliderect(obj.rect):
-                objects.remove(obj)
-                score += 1
+        #removendo objetos
+        #for obj in objects:
+        #    if not obj.solid and personagem.rect.colliderect(obj.rect):
+        #        objects.remove(obj)
+        #        score += 1
         
-        # Checar se mudou de fase
-        
+        # Checar se mudou de fase        
         if personagem.rect.y > screen_height:
             print('passou pra fase de baixo')
             y += 1
@@ -124,9 +126,9 @@ def main():
             obj.draw(screen)
 
         # HUD
-        text = font.render("Moedas: " + str(score), True, BLACK)
+        text = font.render("Mundo: " + str(score), True, BLACK)
         screen.blit(text, (12, 12))   
-        text = font.render("Moedas: " + str(score), True, WHITE)
+        text = font.render("Mundo: " + str(score), True, WHITE)
         screen.blit(text, (10, 10))  
 
         # Atualizar a tela

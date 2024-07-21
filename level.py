@@ -16,6 +16,8 @@ class Level:
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/red.png', solid=True))
                 elif caractere == 'Y':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/yellow.png', solid=True))
+                elif caractere == 'y':
+                    self.objects.append(Object(col_index*32, line_index*32, 'assets/yellow.png', solid=False))
                 elif caractere == 'G':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/green.png', solid=True))
                 elif caractere == 'B':

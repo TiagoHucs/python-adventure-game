@@ -1,4 +1,7 @@
-       ,       ,
-       ,castle ,
-green1 ,green2 ,green3
-       ,       ,red1
+      ,end1  ,       ,       ,
+      ,red2  ,       ,       ,
+      ,black1,       ,       ,
+      ,blue2 ,       ,castle2,
+      ,blue3 ,blue5  ,castle1,
+blue1 ,blue4 ,green1 ,green2 ,green3
+      ,      ,       ,       ,red1
