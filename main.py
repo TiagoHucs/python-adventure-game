@@ -2,6 +2,8 @@ import pygame
 import sys
 from level import Level
 from object import Object 
+from map_helper import load_world_map 
+
 
 # Inicialize o pygame
 pygame.init()
@@ -23,11 +25,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (125, 125, 125)
 
-world_map = [
-    [""         , "fase1.txt", ""],
-    ["fase3.txt", "fase2.txt", ""],
-    [""         ,""          , ""]
-]
+world_map = load_world_map('maps/world_map.txt')
 
 y = 0
 x = 1

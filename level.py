@@ -5,7 +5,7 @@ class Level:
         print('criando:', file_name)
         self.objects = []
 
-        with open(file_name, 'r') as file:
+        with open('maps/'+file_name+'.txt', 'r') as file:
             lines = file.readlines()
 
         for line_index, line in enumerate(lines):

@@ -1,0 +1,3 @@
+     ,fase1,
+fase3,fase2,fase4
+     ,     ,fase5
