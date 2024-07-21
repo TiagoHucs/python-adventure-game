@@ -1,3 +1,4 @@
-     ,fase1,
-fase3,fase2,fase4
-     ,     ,fase5
+      ,      ,
+      ,castle,
+green1,green2,green3
+      ,      ,fase5

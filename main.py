@@ -12,8 +12,8 @@ pygame.init()
 screen_width = 800
 screen_height = 576
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("The Legend of Dude")
-icon = pygame.image.load('assets/hero_0.png')
+pygame.display.set_caption("Adventure 2600 clone")
+icon = pygame.image.load('assets/yellow.png')
 pygame.display.set_icon(icon)
 
 FONT_TYPE = 'freesansbold.ttf'
@@ -27,7 +27,7 @@ GRAY = (125, 125, 125)
 
 world_map = load_world_map('maps/world_map.txt')
 
-y = 0
+y = 1
 x = 1
 
 # Função para carregar o nível
