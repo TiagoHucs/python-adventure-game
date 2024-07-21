@@ -5,7 +5,7 @@ def load_world_map(filename):
             # Remove espaços e quebras de linha no final de cada linha
             line = line.strip()
             # Divide a linha em elementos, separando por vírgula
-            row = line.split(',')
+            row = [item.strip() for item in line.split(',')]
             # Adiciona a linha à matriz
             world_map.append(row)
     return world_map
