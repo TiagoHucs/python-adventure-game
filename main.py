@@ -94,16 +94,21 @@ def main():
                 score += 1
         
         # Checar se mudou de fase
+        
         if personagem.rect.y > screen_height:
+            print('passou pra fase de baixo')
             y += 1
             personagem.rect.y = 0
         elif personagem.rect.y < 0:
+            print('passou pra fase de cima')
             y -= 1
             personagem.rect.y = screen_height
         elif personagem.rect.x > screen_width:
+            print('passou pra fase da direita')
             x += 1
             personagem.rect.x = 0
         elif personagem.rect.x < 0:
+            print('passou pra fase da esquerda')
             x -= 1
             personagem.rect.x = screen_width
 
