@@ -9,20 +9,21 @@ class Level:
             lines = file.readlines()
 
         for line_index, line in enumerate(lines):
-            for col_index, caractere in enumerate(line):
-                if caractere == '0':
+            items = line.split()  # Divide a linha em itens separados por espaços
+            for col_index, item in enumerate(items):
+                if item == '00':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/black.png', solid=True))
-                elif caractere == 'R':
+                elif item == 'RR':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/red.png', solid=True))
-                elif caractere == 'Y':
+                elif item == 'YY':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/yellow.png', solid=True))
-                elif caractere == 'y':
+                elif item == 'yy':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/yellow.png', solid=False))
-                elif caractere == 'G':
+                elif item == 'GG':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/green.png', solid=True))
-                elif caractere == 'B':
+                elif item == 'BB':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/blue.png', solid=True))
-                elif caractere == 'D':
+                elif item == 'DD':
                     self.objects.append(Object(col_index*32, line_index*32, 'assets/dragon0.png', solid=True))
 
         print('fim da criacao:', file_name)

@@ -11,7 +11,7 @@ pygame.init()
 # Configurações da tela
 screen_width = 800
 screen_height = 576
-screen = pygame.display.set_mode((screen_width, screen_height))
+screen = pygame.display.set_mode((screen_width, screen_height),)
 pygame.display.set_caption("Adventure 2600 clone")
 icon = pygame.image.load('assets/yellow.png')
 pygame.display.set_icon(icon)

@@ -1,18 +1,18 @@
-YYYYY.Y.Y.Y...Y.Y.Y.YYYYY
-Y...YYYYYYY...YYYYYYY...Y
-Y...YYYYYYYyyyYYYYYYY...Y
-Y...YYYYYYYyyyYYYYYYY...Y
-Y...YYYYYYYyyyYYYYYYY...Y
-Y...YYYYYYYyyyYYYYYYY...Y
-Y...YYYYYYYyyyYYYYYYY...Y
-Y.....YYYYYyyyYYYYY.....Y
-Y.....YYYYYyyyYYYYY.....Y
-Y.....YYYYYyyyYYYYY.....Y
-Y.....YYYYYyyyYYYYY.....Y
-Y.....YYYYYyyyYYYYY.....Y
-Y.....YYYYY...YYYYY.....Y
-Y.....YYYYY...YYYYY.....Y
-Y.....YYYYY...YYYYY.....Y
-Y.......................Y
-Y.......................Y
-YYYYYYYYYYY...YYYYYYYYYYY
+YY YY YY YY YY .. YY .. YY .. YY .. .. .. YY .. YY .. YY .. YY YY YY YY YY 
+YY .. .. .. YY YY YY YY YY YY YY .. .. .. YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. YY YY YY YY YY YY YY yy yy yy YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. YY YY YY YY YY YY YY yy yy yy YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. YY YY YY YY YY YY YY yy yy yy YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. YY YY YY YY YY YY YY yy yy yy YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. YY YY YY YY YY YY YY yy yy yy YY YY YY YY YY YY YY .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY yy yy yy YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY yy yy yy YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY yy yy yy YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY yy yy yy YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY yy yy yy YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY .. .. .. YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY .. .. .. YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. YY YY YY YY YY .. .. .. YY YY YY YY YY .. .. .. .. .. YY 
+YY .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. YY 
+YY .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. YY 
+YY YY YY YY YY YY YY YY YY YY YY .. .. .. YY YY YY YY YY YY YY YY YY YY YY
