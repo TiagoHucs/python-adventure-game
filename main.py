@@ -3,32 +3,21 @@ import sys
 from level import Level
 from object import Object 
 from map_helper import load_world_map 
+from settings import *
 
 
 # Inicialize o pygame
 pygame.init()
 
-# Configurações da tela
-screen_width = 800
-screen_height = 576
-screen = pygame.display.set_mode((screen_width, screen_height),)
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT),)
 pygame.display.set_caption("Adventure 2600 clone")
 icon = pygame.image.load('assets/yellow.png')
 pygame.display.set_icon(icon)
 
-FONT_TYPE = 'freesansbold.ttf'
-FONT_SIZE = 15
 font = pygame.font.Font(FONT_TYPE, FONT_SIZE)
-
-# Definir a cor
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (125, 125, 125)
 
 world_map = load_world_map('maps/world_map.txt')
 
-#y = 1
-#x = 3
 y = 4
 x = 3
 
@@ -95,24 +84,24 @@ def main():
         #        score += 1
         
         # Checar se mudou de fase        
-        if personagem.rect.y > screen_height:
+        if personagem.rect.y > SCREEN_HEIGHT:
             print('passou pra fase de baixo')
             y += 1
             personagem.rect.y = 0
         elif personagem.rect.y < 0:
             print('passou pra fase de cima')
             y -= 1
-            personagem.rect.y = screen_height
-        elif personagem.rect.x > screen_width:
+            personagem.rect.y = SCREEN_HEIGHT
+        elif personagem.rect.x > SCREEN_WIDTH:
             print('passou pra fase da direita')
             x += 1
             personagem.rect.x = 0
         elif personagem.rect.x < 0:
             print('passou pra fase da esquerda')
             x -= 1
-            personagem.rect.x = screen_width
+            personagem.rect.x = SCREEN_WIDTH
 
-        if personagem.rect.y in [0, screen_height] or personagem.rect.x in [0, screen_width]:
+        if personagem.rect.y in [0, SCREEN_HEIGHT] or personagem.rect.x in [0, SCREEN_WIDTH]:
             level, objects = load_level(y, x)
             if level is None:
                 pygame.quit()
